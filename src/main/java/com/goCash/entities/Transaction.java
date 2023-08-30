@@ -1,5 +1,6 @@
 package com.goCash.entities;
 
+import com.goCash.enums.TransactionStatus;
 import com.goCash.enums.TransactionType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.context.annotation.Bean;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -48,7 +50,7 @@ public class Transaction extends BaseEntity {
     private LocalDateTime updatedAt;
 
     @Column(name = "status")
-    private int status;
+    private TransactionStatus status;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)

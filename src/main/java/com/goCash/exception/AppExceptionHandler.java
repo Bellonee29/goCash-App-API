@@ -23,9 +23,10 @@ public class AppExceptionHandler {
                 .message(exception.getMessage())
                 .build());
     }
+
     @ExceptionHandler(PasswordMatcherException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<ApiResponse>handlePasswordMatcherException(PasswordMatcherException exception){
+    public ResponseEntity<ApiResponse> handlePasswordMatcherException(PasswordMatcherException exception) {
         log.info("I only come up if the 2 passwords provided by the user is dagbo");
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ApiResponse.builder()
                 .message(exception.getMessage())
@@ -42,4 +43,13 @@ public class AppExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 
+    @ExceptionHandler(WalletNotFoundException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ResponseEntity<ApiResponse> WalletNotFoundException(PasswordMatcherException exception) {
+        log.info("Wallet is for logged in users");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ApiResponse.builder()
+                .message(exception.getMessage())
+                .build());
+
+    }
 }

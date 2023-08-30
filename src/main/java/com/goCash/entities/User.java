@@ -59,5 +59,9 @@ public class User extends BaseEntity{
     @OneToMany(mappedBy ="user")
     private List<AirtimeData> airtimeData;
 
+    @OneToOne(mappedBy ="user")
+    private WalletAccount walletAccount;
+
+
 
 }

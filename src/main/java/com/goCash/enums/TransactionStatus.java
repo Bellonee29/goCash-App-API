@@ -2,7 +2,7 @@ package com.goCash.enums;
 
 public enum TransactionStatus {
 
-    PENDING(1), SUCCESSFUL(0), FAILED(2);
+    SUCCESSFUL(0), PENDING(1), FAILED(2);
 
     private int id;
 

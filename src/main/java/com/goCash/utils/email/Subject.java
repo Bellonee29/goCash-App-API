@@ -7,5 +7,4 @@ public class Subject {
     public static final String ACCOUNT_CREDIT = "Account Credit Message";
     public static final String FORGOT_PASSWORD= "Forgot Password";
 
-
 }

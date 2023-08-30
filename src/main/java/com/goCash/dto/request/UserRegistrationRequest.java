@@ -37,7 +37,7 @@ public class UserRegistrationRequest {
     private String address;
     @NotNull(message = "Gender cannot be empty")
     private Gender gender;
-    @NotBlank(message = "Date of birth cannot be empty")
+    @Pattern(regexp = "^(0[1-9]|[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2]|[1-9])/\\d{4}$", message = "Enter your Date of Birth in this format (DD/MM/YYYY)")
     private String dateOfBirth;
     @NotBlank(message = "BVN  cannot be empty")
     private String bvn;
